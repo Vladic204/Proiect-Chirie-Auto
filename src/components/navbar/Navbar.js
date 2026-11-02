@@ -1,6 +1,3 @@
-import sun from "./../../img/icons/sun.svg";
-import moon from "./../../img/icons/moon.svg";
-import "./style.css";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -8,14 +5,9 @@ const Navbar = () => {
     <nav className="nav">
       <div className="container">
         <div className="nav-row">
-          <NavLink to="/" className="logo">
-            <strong>Catalog Lux</strong> Auto
+          <NavLink to="/" className="logo" aria-label="Chirie Auto, pagina principală">
+            <span className="logo__mark" aria-hidden="true">C</span><span>CHIRIE<strong>AUTO </strong></span>
           </NavLink>
-
-          <button className="dark-mode-btn">
-            <img src={sun} alt="Light mode" className="dark-mode-btn__icon" />
-            <img src={moon} alt="Dark mode" className="dark-mode-btn__icon" />
-          </button>
 
           <ul className="nav-list">
             <li className="nav-list__item">
@@ -25,7 +17,7 @@ const Navbar = () => {
                   "nav-list__link" + (isActive ? " nav-list__link--active" : "")
                 }
               >
-                Home
+                Acasă
               </NavLink>
             </li>
             <li className="nav-list__item">
@@ -35,20 +27,14 @@ const Navbar = () => {
                   "nav-list__link" + (isActive ? " nav-list__link--active" : "")
                 }
               >
-                Auto
+                Mașini
               </NavLink>
             </li>
             <li className="nav-list__item">
-              <NavLink
-                to="/contacts"
-                className={({ isActive }) =>
-                  "nav-list__link" + (isActive ? " nav-list__link--active" : "")
-                }
-              >
-                Contacts
-              </NavLink>
+              <a href="/#despre" className="nav-list__link">Despre noi</a>
             </li>
           </ul>
+          <NavLink to="/auto" className="nav-cta">Găsește o mașină <span aria-hidden="true">↗</span></NavLink>
         </div>
       </div>
     </nav>
